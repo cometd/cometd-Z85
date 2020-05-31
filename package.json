@@ -1,0 +1,31 @@
+{
+  "name": "cometd-Z85",
+  "version": "1.0.0",
+  "description": "Z85 encoding/decoding",
+  "keywords": [
+    "Z85",
+    "Base85",
+    "Ascii85",
+    "encoding",
+    "decoding",
+    "codec",
+    "binary",
+    "text"
+  ],
+  "homepage": "https://github.com/cometd/cometd-Z85",
+  "bugs": {
+    "url": "https://github.com/cometd/cometd-Z85/issues"
+  },
+  "license": "Apache-2.0",
+  "main": "Z85.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/cometd/cometd-Z85.git"
+  },
+  "scripts": {
+    "test": "mocha --exit"
+  },
+  "devDependencies": {
+    "mocha": "^5.2.0"
+  }
+}
