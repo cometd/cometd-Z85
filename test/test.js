@@ -57,4 +57,19 @@ describe('Z85', () => {
 
         done();
     });
+    [
+        { name: 'invalid ASCII',    encoded: 'a_b', expected: "Character '_' in position 2 is not valid Z85" },
+        { name: 'invalid Uniucode', encoded: '12Ø', expected: "Character 'Ø' in position 3 is not valid Z85" },
+    ].forEach(test => {
+        it('properly chokes on ' + test.name, done => {
+            let err = null;
+            try {
+                Z85.decode(test.encoded);
+            } catch (e) {
+                err = e;
+            }
+            assert.strictEqual(err.message, test.expected);
+            done();
+        });
+    });
 });
