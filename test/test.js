@@ -57,4 +57,20 @@ describe('Z85', () => {
 
         done();
     });
+    it('encodes subarrays', done => {
+        const expected = '3&*!G4H@';
+        const bytes = [0, 0, 0, 0xC, 0x0, 0xF, 0xF, 0xE, 0xE, 0, 0, 0, 0];
+        const uint1 = Uint8Array.from(bytes).slice(3, -4);
+        const uint2 = Uint8Array.from(bytes).subarray(3, -4);
+
+        const encoded1 = Z85.encode(uint1);
+        const encoded2 = Z85.encode(uint2);
+
+        assert.strictEqual(encoded1.length, expected.length);
+        assert.strictEqual(encoded2.length, expected.length);
+        assert.strictEqual(encoded1, expected);
+        assert.strictEqual(encoded2, expected);
+
+        done();
+    });
 });
