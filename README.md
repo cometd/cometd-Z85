@@ -1,3 +1,5 @@
+![Node.js CI](https://github.com/cometd/cometd-Z85/workflows/Node.js%20CI/badge.svg)
+
 ### CometD-Z85
 [Z85](https://rfc.zeromq.org/spec/32/) encoding/decoding implementation with automatic padding.
 
