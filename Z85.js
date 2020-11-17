@@ -87,8 +87,8 @@
             let buffer = null;
             if (bytes instanceof ArrayBuffer) {
                 buffer = bytes;
-            } else if (bytes.buffer instanceof ArrayBuffer) {
-                buffer = bytes.buffer;
+            } else if (bytes.buffer instanceof ArrayBuffer && 'byteOffset' in bytes) {
+                buffer = bytes.buffer.slice(bytes.byteOffset, bytes.byteOffset + bytes.byteLength);
             } else if (Array.isArray(bytes)) {
                 buffer = new Uint8Array(bytes).buffer;
             }
